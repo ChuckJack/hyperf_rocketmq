@@ -45,7 +45,7 @@ class ConfigProvider
                     'id' => 'config',
                     'description' => 'The config for rocketmq.',
                     'source' => __DIR__ . '/../publish/rocketmq.php',
-                    'destination' => BASE_PATH . '/config/autoload/amqp.php',
+                    'destination' => BASE_PATH . '/config/autoload/rocketmq.php',
                 ],
                 [
                     'id' => 'config',
