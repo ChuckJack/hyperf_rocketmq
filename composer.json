@@ -1,0 +1,65 @@
+{
+    "name": "timebug/hyperf-rocketmq",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "php",
+        "hyperf",
+        "rocketmq"
+    ],
+    "description": "a rocketmq for hyperf",
+    "autoload": {
+        "psr-4": {
+            "Timebug\\Rocketmq\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HyperfTest\\": "tests"
+        }
+    },
+    "require": {
+        "php": "8.0.*",
+        "ext-xmlreader": "*",
+        "ext-xmlwriter": "*",
+        "alibabacloud/ons-20190214": "^1.0",
+        "doctrine/instantiator": "^1.2.0",
+        "guzzlehttp/guzzle": ">=7.4.5",
+        "hyperf/contract": "~2.2.0",
+        "hyperf/di": "~2.2.0",
+        "hyperf/event": "^2.2",
+        "hyperf/pool": "~2.2.0",
+        "hyperf/process": "~2.2.0",
+        "hyperf/utils": "~2.2.0",
+        "psr/container": "^1.0|^2.0",
+        "psr/event-dispatcher": "^1.0",
+        "psr/log": "^1.0|^2.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "mockery/mockery": "^1.0",
+        "phpstan/phpstan": "^1.0",
+        "phpunit/phpunit": ">=7.0",
+        "swoole/ide-helper": "^4.5"
+    },
+    "suggest": {
+        "swow/swow": "Required to create swow components.",
+        "hyperf/event": "Declare queue and start consumers automatically."
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "phpunit -c phpunit.xml --colors=always",
+        "analyse": "phpstan analyse --memory-limit 1024M -l 0 ./src",
+        "cs-fix": "php-cs-fixer fix $1"
+    },
+    "extra": {
+        "hyperf": {
+            "config": "Timebug\\Rocketmq\\ConfigProvider"
+        }
+    }
+}
